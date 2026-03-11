@@ -1,1 +1,0 @@
-Restore site: `bench restore`.

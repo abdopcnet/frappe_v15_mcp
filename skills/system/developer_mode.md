@@ -1,1 +1,5 @@
-Enable with bench set-config developer_mode 1; use for SQL log, source maps, and debug UI.
+Enable for SQL log, source maps, debug UI. Never enable in production.
+
+```bash
+bench --site site.local set-config developer_mode 1
+```

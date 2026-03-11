@@ -1,1 +1,0 @@
-Write tests with FrappeTestCase.

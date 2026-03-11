@@ -85,7 +85,7 @@ Use this folder as Frappe/ERPNext v15 reference in Cursor or VSCode.
 ## Structure
 
 - `AGENTS.md` — Rules + full skills index (single reference).
-- `skills/` — One short instruction per file (Frontend, Backend, DB, API, Bench, etc.).
+- `skills/` — Four groups: `database/`, `system/`, `frappe/`, `erpnext/`. Each file has a short instruction and a code snippet.
 
 ## Version
 
