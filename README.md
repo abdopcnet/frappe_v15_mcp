@@ -80,11 +80,11 @@ Use this folder as Frappe/ERPNext v15 reference in Cursor or VSCode.
 ## Local (Cursor)
 
 - Add this folder to your project or use the `*.md` files as references.
-- Or paste `llms.txt` into Agent instructions for the full index.
+- Or reference `AGENTS.md` for rules and full skills index.
 
 ## Structure
 
-- `rules/` — Development rules (from AGENTS.md).
+- `AGENTS.md` — Rules + full skills index (single reference).
 - `skills/` — One short instruction per file (Frontend, Backend, DB, API, Bench, etc.).
 
 ## Version
