@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "erpnext-frappe-v15-gitmcp": {
+      "url": "https://gitmcp.io/YOUR_USERNAME/YOUR_REPO"
+    }
+  }
+}
