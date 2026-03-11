@@ -72,21 +72,3 @@ Use this folder as Frappe/ERPNext v15 reference in Cursor or VSCode.
   }
 }
 ```
-
-## GitMCP (remote)
-
-- Push this repo to GitHub, then add the MCP using the configs above with URL: `https://gitmcp.io/abdopcnet/frappe_v15_mcp.git`
-
-## Local (Cursor)
-
-- Add this folder to your project or use the `*.md` files as references.
-- Or reference `AGENTS.md` for rules and full skills index.
-
-## Structure
-
-- `AGENTS.md` — Rules + full skills index (single reference).
-- `skills/` — Four groups: `database/`, `system/`, `frappe/`, `erpnext/`. Each file has a short instruction and a code snippet.
-
-## Version
-
-- Frappe/ERPNext **v15**. Do not modify `frappe`, `erpnext`, `hrms`.
