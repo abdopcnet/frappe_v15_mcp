@@ -1,6 +1,11 @@
-Clear cache after config or permission changes; use user/doctype scope when possible.
+# Cache
+
+Use one cache clear call to invalidate stale values.
 
 ```python
-frappe.cache().delete_value("my_key")
-frappe.clear_cache(user="user@example.com")
+frappe.clear_cache()
 ```
+
+- Use after configuration or permission changes
+- Clear specific scope when possible (`user`, `doctype`)
+- Avoid unnecessary global cache clears

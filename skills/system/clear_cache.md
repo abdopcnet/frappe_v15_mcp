@@ -1,6 +1,11 @@
-Invalidate cache after metadata or config changes. Prefer scoped clear when possible.
+# Cache
+
+Use one cache clear call to invalidate stale values.
 
 ```python
 frappe.clear_cache()
-frappe.clear_cache(doctype="Sales Order")
 ```
+
+- Use after configuration or permission changes
+- Clear specific scope when possible (`user`, `doctype`)
+- Avoid unnecessary global cache clears

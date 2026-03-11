@@ -1,6 +1,14 @@
-Check permission before write/delete; use has_permission with doc= for row-level.
+# has_permission
+
+Check user permission before sensitive operations.
 
 ```python
-frappe.has_permission("Task", "read")
-frappe.has_permission("Task", "write", doc=doc)
+if not frappe.has_permission("Sales Order", "write", doc=doc):
+	frappe.throw("Not permitted")
 ```
+
+## Notes
+
+- Check permissions before write/delete operations
+- Use explicit `doc` when checking document-level rules
+- Fail early with clear error messages

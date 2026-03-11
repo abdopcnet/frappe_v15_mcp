@@ -1,9 +1,15 @@
-Schedule background tasks: cron, hourly, daily, weekly in hooks.py.
+# scheduler_events
+
+Define scheduled tasks in `hooks.py`.
 
 ```python
-# hooks.py
 scheduler_events = {
-    "hourly": ["my_app.tasks.hourly_sync"],
-    "daily": ["my_app.tasks.daily_report"],
+	"daily": ["my_app.tasks.daily_cleanup"]
 }
 ```
+
+## Notes
+
+- Keep jobs idempotent and retry-safe
+- Prefer small focused task methods
+- Use cron entries only when needed

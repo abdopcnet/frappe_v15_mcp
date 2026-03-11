@@ -1,7 +1,11 @@
-Stock Ledger: make_gl_entries equivalent for inventory; use make_sl_entries for stock docs.
+# Stock Ledger
+
+Use one stock ledger query to review quantity movement for an item.
 
 ```python
-# In StockController subclasses (e.g. Stock Entry): update stock via make_sl_entries
-# Do not create Stock Ledger Entry directly; use standard APIs.
-from erpnext.stock.stock_ledger import make_sl_entries
+sle = frappe.get_all("Stock Ledger Entry", filters={"item_code": item_code}, fields=["posting_date", "actual_qty"])
 ```
+
+- Include warehouse filters when needed
+- Check posting date ordering
+- Use for stock reconciliation checks

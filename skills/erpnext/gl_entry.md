@@ -1,6 +1,10 @@
-Accounting: create GL entries in on_submit; cancel in on_cancel. Use make_gl_entries pattern.
+# gl_entry
+
+Create or query GL entries. Debit and credit must balance.
 
 ```python
-# In AccountsController: self.make_gl_entries() in on_submit, self.make_gl_entries(cancel=True) in on_cancel
-# GL Entry doctype; link to voucher_type, voucher_no, account, debit, credit.
+from erpnext.accounts.general_ledger import make_gl_entries
+gl_entries = [{"account": "Debtors - C", "debit": 1000, "credit": 0, "against": "Sales - C", "voucher_type": "Sales Invoice", "voucher_no": doc.name, "posting_date": doc.posting_date, "company": doc.company}, ...]
+make_gl_entries(gl_entries)
+frappe.get_all("GL Entry", filters={"voucher_no": doc.name}, fields=["account", "debit", "credit"])
 ```

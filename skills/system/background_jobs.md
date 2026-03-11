@@ -1,9 +1,11 @@
-Keep jobs idempotent; pass small serializable args; log start/finish.
+# Background Jobs
+
+Use one enqueue call to move heavy work out of request/response flow.
 
 ```python
-def rebuild_cache():
-    frappe.logger().info("Rebuild started")
-    # ... work ...
-    frappe.logger().info("Rebuild done")
 frappe.enqueue("my_app.tasks.rebuild_cache", queue="short")
 ```
+
+- Keep jobs idempotent
+- Pass small serializable arguments
+- Log start and finish states

@@ -1,6 +1,11 @@
-Use raw SQL only when needed; bind values to avoid injection.
+# Raw SQL
+
+Use one raw SQL query only when ORM or query builder cannot cover the case.
 
 ```python
-frappe.db.sql("SELECT name FROM tabTask WHERE status = %(status)s", {"status": "Open"})
-frappe.db.sql("UPDATE tabTask SET status = %s WHERE name = %s", ("Closed", "TASK-001"))
+rows = frappe.db.sql("SELECT name FROM `tabItem` WHERE disabled = 0 LIMIT 20", as_dict=True)
 ```
+
+- Parameterize dynamic values
+- Keep queries read-only when possible
+- Document why raw SQL is required

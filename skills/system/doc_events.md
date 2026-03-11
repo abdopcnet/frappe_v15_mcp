@@ -1,11 +1,9 @@
-Register DocType event handlers in hooks.py. Handler path must be importable.
+# doc_events
+
+Bind DocType event in hooks.py.
 
 ```python
-# hooks.py
-doc_events = {
-    "Sales Order": {
-        "validate": "my_app.events.validate_sales_order",
-        "on_submit": "my_app.events.on_submit_so",
-    }
-}
+doc_events = { "Sales Order": { "validate": "my_app.events.sales_order_validate" } }
 ```
+
+Handler must be importable. Keep handlers small.
