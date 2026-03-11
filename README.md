@@ -2,10 +2,80 @@
 
 Use this folder as Frappe/ERPNext v15 reference in Cursor or VSCode.
 
+## Add this MCP
+
+**MCP Server URL:** `https://gitmcp.io/abdopcnet/frappe_v15_mcp.git`
+
+**Cursor** — update `~/.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "frappe_v15_mcp.git Docs": {
+      "url": "https://gitmcp.io/abdopcnet/frappe_v15_mcp.git"
+    }
+  }
+}
+```
+
+**Claude Desktop** — update your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "frappe_v15_mcp.git Docs": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://gitmcp.io/abdopcnet/frappe_v15_mcp.git"
+      ]
+    }
+  }
+}
+```
+
+**Windsurf** — update `~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "frappe_v15_mcp.git Docs": {
+      "serverUrl": "https://gitmcp.io/abdopcnet/frappe_v15_mcp.git"
+    }
+  }
+}
+```
+
+**VSCode** — update `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "frappe_v15_mcp.git Docs": {
+      "type": "sse",
+      "url": "https://gitmcp.io/abdopcnet/frappe_v15_mcp.git"
+    }
+  }
+}
+```
+
+**Cline** — update `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "frappe_v15_mcp.git Docs": {
+      "url": "https://gitmcp.io/abdopcnet/frappe_v15_mcp.git",
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
 ## GitMCP (remote)
 
-- Push this repo to GitHub, then in Cursor/VSCode add MCP URL: `https://gitmcp.io/username/repo`
-- Replace `github.com` with `gitmcp.io` in the repo URL.
+- Push this repo to GitHub, then add the MCP using the configs above with URL: `https://gitmcp.io/abdopcnet/frappe_v15_mcp.git`
 
 ## Local (Cursor)
 
