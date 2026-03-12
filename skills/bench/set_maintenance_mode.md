@@ -3,13 +3,13 @@
 Enable or disable site maintenance mode.
 
 ```bash
-bench --site <site> set-maintenance-mode on
+bench --site site_name set-maintenance-mode on
 ```
 
 ## Option
 
 ```bash
-bench --site <site> set-maintenance-mode off
+bench --site site_name set-maintenance-mode off
 ```
 
 ## Notes

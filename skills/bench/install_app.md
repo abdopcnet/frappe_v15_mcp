@@ -3,7 +3,7 @@
 Install an app on a specific site.
 
 ```bash
-bench --site <site> install-app <app_name>
+bench --site site_name install-app <app_name>
 ```
 
 ## Notes

@@ -3,7 +3,7 @@
 Terminate all active sessions on a site.
 
 ```bash
-bench --site <site> destroy-all-sessions --reason "Security update"
+bench --site site_name destroy-all-sessions --reason "Security update"
 ```
 
 ## Notes

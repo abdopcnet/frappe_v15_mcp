@@ -3,7 +3,7 @@
 Restore selected data from a backup SQL file.
 
 ```bash
-bench --site <site> partial-restore <backup.sql>
+bench --site site_name partial-restore <backup.sql>
 ```
 
 ## Notes

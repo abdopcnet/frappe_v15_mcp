@@ -3,7 +3,7 @@
 Delete old rows from a log DocType table.
 
 ```bash
-bench --site <site> clear-log-table --doctype "Error Log" --days 30
+bench --site site_name clear-log-table --doctype "Error Log" --days 30
 ```
 
 ## Notes

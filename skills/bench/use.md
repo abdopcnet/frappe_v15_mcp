@@ -3,7 +3,7 @@
 Set the default site for bench.
 
 ```bash
-bench use <site>
+bench use site_name
 ```
 
 ## Notes

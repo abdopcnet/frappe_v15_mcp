@@ -3,7 +3,7 @@
 Add an index to a DocType table column.
 
 ```bash
-bench --site <site> add-database-index --doctype <doctype> --column <fieldname>
+bench --site site_name add-database-index --doctype <doctype> --column <fieldname>
 ```
 
 ## Notes

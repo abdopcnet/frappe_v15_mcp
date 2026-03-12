@@ -3,13 +3,13 @@
 Remove orphaned tables for deleted DocTypes.
 
 ```bash
-bench --site <site> trim-database
+bench --site site_name trim-database
 ```
 
 ## Option
 
 ```bash
-bench --site <site> trim-database --dry-run
+bench --site site_name trim-database --dry-run
 ```
 
 ## Notes

@@ -3,7 +3,7 @@
 Export DocType data to CSV.
 
 ```bash
-bench --site <site> export-csv <doctype>
+bench --site site_name export-csv <doctype>
 ```
 
 ## Notes

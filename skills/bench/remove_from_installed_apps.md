@@ -3,7 +3,7 @@
 Remove app entry from installed apps list without uninstalling data.
 
 ```bash
-bench --site <site> remove-from-installed-apps <app_name>
+bench --site site_name remove-from-installed-apps <app_name>
 ```
 
 ## Notes

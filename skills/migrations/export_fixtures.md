@@ -3,7 +3,7 @@
 Export fixture records to app JSON files.
 
 ```bash
-bench --site <site> export-fixtures --app <app_name>
+bench --site site_name export-fixtures --app <app_name>
 ```
 
 ## Notes

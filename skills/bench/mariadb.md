@@ -3,7 +3,7 @@
 Open MariaDB console for a site.
 
 ```bash
-bench --site <site> mariadb
+bench --site site_name mariadb
 ```
 
 ## Notes

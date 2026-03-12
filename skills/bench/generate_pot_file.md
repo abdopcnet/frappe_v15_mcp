@@ -3,13 +3,13 @@
 Generate translation POT template files.
 
 ```bash
-bench --site <site> generate-pot-file
+bench --site site_name generate-pot-file
 ```
 
 ## Option
 
 ```bash
-bench --site <site> generate-pot-file --app <app_name>
+bench --site site_name generate-pot-file --app <app_name>
 ```
 
 ## Notes

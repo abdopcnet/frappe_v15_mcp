@@ -3,7 +3,7 @@
 Disable a user account.
 
 ```bash
-bench --site <site> disable-user <email>
+bench --site site_name disable-user <email>
 ```
 
 ## Notes

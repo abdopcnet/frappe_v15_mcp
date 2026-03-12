@@ -3,7 +3,7 @@
 Describe table structure for a DocType.
 
 ```bash
-bench --site <site> describe-database-table --doctype "Sales Invoice"
+bench --site site_name describe-database-table --doctype "Sales Invoice"
 ```
 
 ## Notes

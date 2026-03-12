@@ -3,7 +3,7 @@
 Set password for Administrator account.
 
 ```bash
-bench --site <site> set-admin-password
+bench --site site_name set-admin-password
 ```
 
 ## Notes

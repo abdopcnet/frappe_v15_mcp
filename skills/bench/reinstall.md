@@ -3,7 +3,7 @@
 Wipe and reinstall a site.
 
 ```bash
-bench --site <site> reinstall --yes
+bench --site site_name reinstall --yes
 ```
 
 ## Notes
