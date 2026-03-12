@@ -2,7 +2,15 @@
 
 Create a Custom Field with a **direct command** (no Python file). Uses Frappe’s `create_custom_field` and `bench execute`.
 
-## 1. (Optional) Inspect the target DocType
+## 1. (Optional) Query custom fields and inspect target DocType
+
+**List custom fields (e.g. by doctype, or with is_system_generated):**
+
+```bash
+bench --site <site> mariadb -e "SELECT dt, fieldname, is_system_generated FROM \`tabCustom Field\` WHERE is_system_generated = 1 AND dt IN ('Salary Slip', 'Payroll Settings', 'Salary Component') ORDER BY dt, fieldname;"
+```
+
+Adjust the `WHERE` clause (e.g. remove `is_system_generated` or change `dt IN (...)`) as needed. Use backticks around table name if it contains spaces.
 
 To choose where to insert the new field (`insert_after`):
 
