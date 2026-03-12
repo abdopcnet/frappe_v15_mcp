@@ -3,7 +3,7 @@
 Run site health checks.
 
 ```bash
-bench --site site_name doctor
+bench --site <site> doctor
 ```
 
 ## Notes

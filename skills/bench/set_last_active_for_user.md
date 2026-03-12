@@ -3,7 +3,7 @@
 Set last active timestamp for a user.
 
 ```bash
-bench --site site_name set-last-active-for-user --user <username>
+bench --site <site> set-last-active-for-user --user <username>
 ```
 
 ## Notes

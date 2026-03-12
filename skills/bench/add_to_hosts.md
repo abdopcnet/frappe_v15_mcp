@@ -3,7 +3,7 @@
 Add site host entry to local hosts file.
 
 ```bash
-bench --site site_name add-to-hosts
+bench --site <site> add-to-hosts
 ```
 
 ## Notes

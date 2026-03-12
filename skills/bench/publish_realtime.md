@@ -3,7 +3,7 @@
 Publish a realtime event to connected clients.
 
 ```bash
-bench --site site_name publish-realtime <event_name> --message "Hello"
+bench --site <site> publish-realtime <event_name> --message "Hello"
 ```
 
 ## Notes

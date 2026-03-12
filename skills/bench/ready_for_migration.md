@@ -3,7 +3,7 @@
 Check if site is ready for migration.
 
 ```bash
-bench --site site_name ready-for-migration
+bench --site <site> ready-for-migration
 ```
 
 ## Notes

@@ -3,7 +3,7 @@
 Run database transformation operations.
 
 ```bash
-bench --site site_name transform-database --type archive
+bench --site <site> transform-database --type archive
 ```
 
 ## Notes

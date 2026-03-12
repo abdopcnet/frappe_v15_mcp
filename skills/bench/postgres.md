@@ -3,7 +3,7 @@
 Open PostgreSQL console for a site.
 
 ```bash
-bench --site site_name postgres
+bench --site <site> postgres
 ```
 
 ## Notes

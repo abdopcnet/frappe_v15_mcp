@@ -3,7 +3,7 @@
 Run a SQL query through bench using MariaDB.
 
 ```bash
-bench --site site_name mariadb -e 'SELECT name, dt, enabled FROM `tabClient Script` WHERE dt IN ("Stock Entry", "Stock Entry Detail") ORDER BY enabled DESC, name;'
+bench --site <site> mariadb -e 'SELECT name, dt, enabled FROM `tabClient Script` WHERE dt IN ("Stock Entry", "Stock Entry Detail") ORDER BY enabled DESC, name;'
 ```
 
 ## Notes

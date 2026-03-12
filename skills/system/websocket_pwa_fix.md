@@ -79,7 +79,7 @@ location /socket.io {
     proxy_set_header Connection $connection_upgrade;
     proxy_set_header X-Forwarded-For $remote_addr;
     proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Frappe-Site-Name YOUR_SITE_NAME;
+    proxy_set_header X-Frappe-Site-Name YOUR_<site>;
     proxy_set_header Origin $scheme://$http_host;
     proxy_set_header Host $host;
     proxy_read_timeout 600;

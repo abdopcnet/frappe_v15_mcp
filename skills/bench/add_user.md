@@ -3,7 +3,7 @@
 Create a user on a site.
 
 ```bash
-bench --site site_name add-user <email> --user-type "System User"
+bench --site <site> add-user <email> --user-type "System User"
 ```
 
 ## Notes

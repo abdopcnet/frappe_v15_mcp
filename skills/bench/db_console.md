@@ -3,7 +3,7 @@
 Open database console for the site's configured backend.
 
 ```bash
-bench --site site_name db-console
+bench --site <site> db-console
 ```
 
 ## Notes

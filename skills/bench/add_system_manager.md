@@ -3,7 +3,7 @@
 Create a System Manager user.
 
 ```bash
-bench --site site_name add-system-manager <email> --first-name <name>
+bench --site <site> add-system-manager <email> --first-name <name>
 ```
 
 ## Notes
