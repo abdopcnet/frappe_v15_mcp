@@ -2,7 +2,7 @@
 
 - **Investigate before coding** — understand and analyze first.
 - **Frappe/ERPNext** — follow their standards; English-only short comments above code.
-- Reply in English Only, end your response with ✅.
+- Reply in simple English Only, end your response with ✅.
 
 
 ## Naming Conventions
