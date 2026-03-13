@@ -1,9 +1,9 @@
 # Rules
 
 - **Investigate before coding** — understand and analyze first.
-- **When following this rule** — end your reply with ✅.
 - **Frappe/ERPNext** — follow their standards; English-only short comments above code.
-- **Never modify** — `frappe`, `erpnext`, `hrms`.
+- If you applied these rules in your reply, end your response with ✅.
+
 
 ## Naming Conventions
 
