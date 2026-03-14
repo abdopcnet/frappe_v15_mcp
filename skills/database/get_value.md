@@ -1,11 +1,6 @@
-# get_value
-
-Use one `frappe.db.get_value` call to fetch a single field quickly.
+Fetch one or few fields; use for light queries. Single DocType: pass `filters=None`.
 
 ```python
-email = frappe.db.get_value("User", "Administrator", "email")
+last_login = frappe.db.get_value("User", "user@example.com", "last_login")
+name, owner = frappe.db.get_value("Task", {"status": "Open"}, ["name", "owner"])
 ```
-
-- Fast for single-value lookups
-- Avoid full document load when unnecessary
-- Use filters for dynamic lookups

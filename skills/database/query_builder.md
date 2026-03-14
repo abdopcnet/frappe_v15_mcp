@@ -1,12 +1,8 @@
-# Query Builder
-
-Use one query builder statement for safe composable SQL generation.
+Use Frappe query builder for complex queries instead of raw SQL when possible.
 
 ```python
-User = frappe.qb.DocType("User")
-rows = frappe.qb.from_(User).select(User.name).where(User.enabled == 1).run(as_dict=True)
+from frappe.query_builder import DocType
+Task = DocType("Task")
+q = frappe.qb.from_(Task).select(Task.name, Task.subject).where(Task.status == "Open")
+q.run(as_dict=True)
 ```
-
-- Prefer query builder over raw SQL
-- Keep filters explicit and indexed
-- Use `as_dict=True` for readability

@@ -1,11 +1,5 @@
-# get_all
-
-Use one `frappe.get_all` query to fetch multiple records efficiently.
+Query multiple documents with filters and field list.
 
 ```python
-rows = frappe.get_all("Customer", filters={"disabled": 0}, fields=["name", "customer_name"])
+tasks = frappe.get_all("Task", filters={"status": "Open"}, fields=["name", "subject"], limit_page_length=20)
 ```
-
-- Select only required fields
-- Add filters to reduce scan cost
-- Use pagination for large datasets

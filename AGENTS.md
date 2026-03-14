@@ -1,9 +1,9 @@
 # Rules
 
 - **Investigate before coding** — understand and analyze first.
+- **When following this rule** — end your reply with ✅.
 - **Frappe/ERPNext** — follow their standards; English-only short comments above code.
-- Reply in simple English Only, end your response with ✅.
-
+- **Never modify** — `frappe`, `erpnext`, `hrms`.
 
 ## Naming Conventions
 
@@ -14,176 +14,92 @@
 
 ## Logging
 
-- Frontend: `skills/logging/frontend_logging.md`
-- Backend: `skills/logging/log_error.md`
-
----
-
-# Frontend (JavaScript)
-
-- `skills/frontend/set_value.md` - Get/set form values
-- `skills/frontend/field_properties.md` - Hide, enable, require, options
-- `skills/frontend/refresh_field.md` - Refresh field(s)
-- `skills/frontend/custom_buttons.md` - Add/remove buttons, primary action
-- `skills/frontend/set_intro.md` - Intro message, dashboard indicator
-- `skills/frontend/form_state.md` - is_new, is_dirty
-- `skills/frontend/form_events.md` - Lifecycle and field handlers
-- `skills/frontend/child_table.md` - Child table add/clear/events
-- `skills/frontend/set_query.md` - Link field filters
-- `skills/frontend/api_calls.md` - frappe.call, frappe.xcall
-- `skills/frontend/dialogs.md` - msgprint, show_alert, confirm; HTML in message use frappe.utils.escape_html
-- `skills/frontend/utilities.md` - flt, cint, datetime, format_currency
-
----
-
-# Backend (Python)
-
-- `skills/backend/controller_lifecycle.md` - Document lifecycle methods
-- `skills/backend/save.md` - `doc.save()`
-- `skills/backend/validation_patterns.md` - Validation patterns
+- Frontend: `skills/frappe/frontend_logging.md`
+- Backend: `skills/frappe/log_error.md`
 
 ---
 
 # Database
 
-- `skills/database/get_doc.md` - Get/create/delete documents
-- `skills/database/get_value.md` - Get field values
-- `skills/database/get_all.md` - Query multiple documents
-- `skills/database/query_builder.md` - Advanced queries
-- `skills/database/raw_sql.md` - Raw SQL queries
-- `skills/database/analyze_tables_and_processlist.md` - Analyze tables/columns and processlist; find what blocks migrate, KILL blocker, re-run migrate
-
----
-
-# API
-
-- `skills/api/whitelist_basic.md` - Basic @frappe.whitelist()
-- `skills/api/whitelist_advanced.md` - Advanced API patterns
+- `skills/database/get_doc.md` - Load/create document; for_update
+- `skills/database/get_value.md` - One or few fields; light queries
+- `skills/database/get_all.md` - Multiple documents, filters, fields
+- `skills/database/query_builder.md` - QB API for complex queries
+- `skills/database/raw_sql.md` - Raw SQL with safe binding
+- `skills/database/db_transaction.md` - commit, rollback
+- `skills/database/analyze_tables_and_processlist.md` - Migrate blockers, KILL
 
 ---
 
 # System
 
-- `skills/system/doc_events.md` - `doc_events` hook
-- `skills/system/scheduler_events.md` - `scheduler_events` hook
-- `skills/system/has_permission.md` - `frappe.has_permission()`
-- `skills/system/clear_cache.md` - `frappe.clear_cache()`
-- `skills/system/enqueue.md` - `frappe.enqueue()`
-- `skills/system/system_console.md` - System Console (safe_exec) vs bench execute
-- `skills/system/websocket_pwa_fix.md` - WebSocket/PWA/realtime fix: apps.txt order, gunicorn restart, nginx keepalive/ws headers, redis_socketio, Cloudflare
+- `skills/system/doc_events.md` - doc_events in hooks
+- `skills/system/scheduler_events.md` - cron, hourly, daily
+- `skills/system/has_permission.md` - Permission checks
+- `skills/system/permissions.md` - Row-level permission
+- `skills/system/permission_query_conditions.md` - List filter in hooks
+- `skills/system/clear_cache.md` - frappe.clear_cache
+- `skills/system/cache.md` - Cache scope
+- `skills/system/enqueue.md` - Background jobs
+- `skills/system/background_jobs.md` - Job patterns
+- `skills/system/fixtures_hook.md` - fixtures in hooks
+- `skills/system/developer_mode.md` - set-config developer_mode
+- `skills/system/system_console.md` - Safe console vs bench execute
+- `skills/system/websocket_pwa_fix.md` - WebSocket/PWA troubleshooting
 
 ---
 
-# Utils
+# Frappe
 
-- `skills/utils/date_utils.md` - Date operations (getdate, add_days, formatdate)
-- `skills/utils/money_utils.md` - Currency formatting (fmt_money, flt, cint)
-- `skills/utils/string_utils.md` - String operations (scrub, comma_or, get_link_to_form)
-
----
-
-# Naming & Mapping
-
-- `skills/naming/naming_series.md` - Auto-generate document names
-- `skills/mapping/get_mapped_doc.md` - Create document from another
-
----
-
-# Email & Files
-
-- `skills/email/send_email.md` - Send emails with attachments
-- `skills/files/file_upload.md` - File upload and attachment
-- `skills/files/pdf_generation.md` - Generate PDFs from HTML
-- `skills/files/excel_utils.md` - Create and read Excel files
-
----
-
-# Print & Reports
-
-- `skills/print/print_format.md` - Jinja print formats
-- `skills/reports/script_report.md` - Python-based reports
-- `skills/reports/query_report.md` - SQL-based reports
-
----
-
-# Web & Portal
-
-- `skills/web/web_page.md` - Public web pages
-- `skills/web/web_form.md` - Public forms
-
----
-
-# Customization
-
-- `skills/custom/create_custom_field.md` - `create_custom_field()`
-- `skills/custom/client_script.md` - JavaScript via UI
-- `skills/custom/server_script.md` - Python via UI
-- `skills/custom/property_setter.md` - Property Setter (Customize Form, document fields)
-
----
-
-# Migrations & Testing
-
-- `skills/migrations/patch.md` - Database migrations
-- `skills/migrations/export_fixtures.md` - `bench export-fixtures`
-- `skills/testing/frappe_test_case.md` - `FrappeTestCase`
+- `skills/frappe/set_value.md` - Form field values
+- `skills/frappe/field_properties.md` - Hide, enable, require
+- `skills/frappe/refresh_field.md` - Refresh dependent fields
+- `skills/frappe/custom_buttons.md` - Toolbar, primary action
+- `skills/frappe/set_intro.md` - Intro message
+- `skills/frappe/form_state.md` - is_new, is_dirty
+- `skills/frappe/form_events.md` - onload, refresh, validate, field events
+- `skills/frappe/child_table.md` - Child table add/clear/events
+- `skills/frappe/set_query.md` - Link field filters
+- `skills/frappe/api_calls.md` - frappe.call, frappe.xcall
+- `skills/frappe/dialogs.md` - msgprint, show_alert, escape_html
+- `skills/frappe/utilities.md` - flt, cint, datetime
+- `skills/frappe/controller_lifecycle.md` - validate, on_submit, on_cancel
+- `skills/frappe/save.md` - doc.save()
+- `skills/frappe/validation_patterns.md` - frappe.throw
+- `skills/frappe/whitelist_basic.md` - @frappe.whitelist()
+- `skills/frappe/whitelist_advanced.md` - allow_guest, permissions
+- `skills/frappe/rest_resource.md` - /api/resource CRUD
+- `skills/frappe/date_utils.md` - getdate, add_days, formatdate
+- `skills/frappe/money_utils.md` - flt, cint, fmt_money
+- `skills/frappe/string_utils.md` - scrub, get_link_to_form
+- `skills/frappe/naming_series.md` - Auto naming
+- `skills/frappe/get_mapped_doc.md` - Document from document
+- `skills/frappe/send_email.md` - Email with attachments
+- `skills/frappe/file_upload.md` - File attach
+- `skills/frappe/pdf_generation.md` - get_pdf
+- `skills/frappe/excel_utils.md` - make_xlsx
+- `skills/frappe/print_format.md` - Jinja print
+- `skills/frappe/wkhtmltopdf_print_format.md` - PDF CSS
+- `skills/frappe/script_report.md` - Python report
+- `skills/frappe/query_report.md` - SQL report
+- `skills/frappe/web_page.md` - Public page
+- `skills/frappe/web_form.md` - Public form
+- `skills/frappe/create_custom_field.md` - create_custom_fields
+- `skills/frappe/client_script.md` - Client Script DocType
+- `skills/frappe/server_script.md` - Server Script DocType
+- `skills/frappe/property_setter.md` - Customize Form
+- `skills/frappe/patch.md` - DB migrations
+- `skills/frappe/export_fixtures.md` - export-fixtures
+- `skills/frappe/frappe_test_case.md` - FrappeTestCase
+- `skills/frappe/unit_test.md` - Unit tests
+- `skills/frappe/bench_commands.md` - new-site, migrate, backup, run-tests
+- `skills/frappe/log_error.md` - Error log
+- `skills/frappe/frontend_logging.md` - Client logging
 
 ---
 
-# ERPNext Specific
+# ERPNext
 
-- `skills/erpnext/stock_ledger.md` - Stock ledger entries
-- `skills/erpnext/gl_entry.md` - Accounting GL entries
-- `skills/erpnext/base_controllers.md` - AccountsController, StockController, etc.
-
----
-
-# GitHub
-
-- `skills/github/bug_report_github_issue_template.md` - ERPNext bug report template for GitHub issues
-
----
-
-# Bench
-
-- `skills/bench/new_site.md` - `bench new-site`
-- `skills/bench/drop_site.md` - `bench drop-site`
-- `skills/bench/use.md` - `bench use`
-- `skills/bench/reinstall.md` - `bench reinstall`
-- `skills/bench/install_app.md` - `bench install-app`
-- `skills/bench/get_app.md` - `bench get-app`
-- `skills/bench/uninstall_app.md` - `bench uninstall-app`
-- `skills/bench/list_apps.md` - `bench list-apps`
-- `skills/bench/remove_from_installed_apps.md` - `bench remove-from-installed-apps`
-- `skills/bench/add_system_manager.md` - `bench add-system-manager`
-- `skills/bench/add_user.md` - `bench add-user`
-- `skills/bench/disable_user.md` - `bench disable-user`
-- `skills/bench/set_password.md` - `bench set-password`
-- `skills/bench/set_admin_password.md` - `bench set-admin-password`
-- `skills/bench/set_last_active_for_user.md` - `bench set-last-active-for-user`
-- `skills/bench/add_to_hosts.md` - `bench add-to-hosts`
-- `skills/bench/browse.md` - `bench browse`
-- `skills/bench/publish_realtime.md` - `bench publish-realtime`
-- `skills/bench/set_maintenance_mode.md` - `bench set-maintenance-mode`
-- `skills/bench/doctor.md` - `bench doctor`
-- `skills/bench/ready_for_migration.md` - `bench ready-for-migration`
-- `skills/bench/destroy_all_sessions.md` - `bench destroy-all-sessions`
-- `skills/bench/backup.md` - `bench backup`
-- `skills/bench/restore.md` - `bench restore`
-- `skills/bench/partial_restore.md` - `bench partial-restore`
-- `skills/bench/mariadb.md` - `bench mariadb`
-- `skills/bench/postgres.md` - `bench postgres`
-- `skills/bench/db_console.md` - `bench db-console`
-- `skills/bench/add_database_index.md` - `bench add-database-index`
-- `skills/bench/describe_database_table.md` - `bench describe-database-table`
-- `skills/bench/transform_database.md` - `bench transform-database`
-- `skills/bench/trim_database.md` - `bench trim-database`
-- `skills/bench/trim_tables.md` - `bench trim-tables`
-- `skills/bench/clear_log_table.md` - `bench clear-log-table`
-- `skills/bench/migrate.md` - `bench migrate`
-- `skills/bench/trigger_scheduler_event.md` - `bench trigger-scheduler-event`
-- `skills/bench/run_tests.md` - `bench run-tests`
-- `skills/bench/generate_pot_file.md` - `bench generate-pot-file`
-- `skills/bench/export_csv.md` - `bench export-csv`
-- `skills/bench/mariadb_query.md` - `bench mariadb -e`
-- `skills/bench/version.md` - `bench version`
+- `skills/erpnext/stock_ledger.md` - Stock Ledger, make_sl_entries
+- `skills/erpnext/gl_entry.md` - GL entries, make_gl_entries
+- `skills/erpnext/base_controllers.md` - StockController, AccountsController
