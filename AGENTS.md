@@ -14,21 +14,6 @@
 
 ---
 
-# Skills Index
-
-Current root: `skills/`
-
-Current markdown totals:
-
-- `130` markdown files under `skills/`
-- `128` topic files
-- `2` index files: `skills/README.md`, `skills/STRUCTURE.md`
-
-## Index Files
-
-- `skills/README.md` - quick usage notes for the snippet-first library
-- `skills/STRUCTURE.md` - compact folder map
-
 ## Category Map
 
 - `skills/api/` - API exposure and whitelisted methods `(2)`
