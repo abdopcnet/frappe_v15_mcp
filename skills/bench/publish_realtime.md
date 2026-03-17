@@ -1,12 +1,14 @@
-# publish-realtime
+# Publish Realtime From Bench
 
-Publish a realtime event to connected clients.
+Use this when you want to trigger a realtime event manually through bench console.
+
+## Example
 
 ```bash
-bench --site <site> publish-realtime <event_name> --message "Hello"
+bench --site site.local console
+frappe.publish_realtime("custom_event", {"status": "ok"}, user="Administrator")
 ```
 
-## Notes
+## Note
 
-- Use for testing realtime channels
-- Confirm event listeners exist on client side
+Use app code for repeatable realtime behavior. Bench console is for debugging.

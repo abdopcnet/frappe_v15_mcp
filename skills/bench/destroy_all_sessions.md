@@ -1,12 +1,16 @@
-# destroy-all-sessions
+# Destroy All Sessions
 
-Terminate all active sessions on a site.
+Use this when forcing all users to log in again.
+
+## Example
 
 ```bash
-bench --site <site> destroy-all-sessions --reason "Security update"
+bench --site site.local console
+frappe.db.delete("Sessions")
+frappe.cache.flushall()
+frappe.db.commit()
 ```
 
-## Notes
+## Note
 
-- Users will be logged out immediately
-- Use a clear maintenance/security reason
+This is disruptive. Use only for security or auth-reset cases.

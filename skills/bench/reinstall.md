@@ -1,12 +1,13 @@
-# reinstall
+# Reinstall
 
-Wipe and reinstall a site.
+Use this when recreating site schema and data from scratch while keeping the site entry.
+
+## Example
 
 ```bash
-bench --site <site> reinstall --yes
+bench --site site.local reinstall
 ```
 
-## Notes
+## Note
 
-- This removes all site data
-- Use only with verified backup
+Destructive. Do not use on production without confirmed backups.

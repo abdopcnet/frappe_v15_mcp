@@ -1,14 +1,31 @@
 # utilities
 
-Type conversion and date/format helpers in client scripts.
+Common client-side helpers for type conversion, dates, and formatting.
+
+## Type helpers
 
 ```javascript
-flt(value); flt(value, 2); cint(value); cstr(value);
-frappe.datetime.get_today();
-frappe.datetime.add_days(date, 5);
-frappe.datetime.str_to_obj(date_string);
-frappe.datetime.obj_to_str(date_obj);
-format_currency(amount, currency, decimals);
+const qty = flt(frm.doc.qty, 2);
+const count = cint(frm.doc.item_count);
+const text = cstr(frm.doc.subject);
 ```
 
-Normalize input before calculations.
+## Date helpers
+
+```javascript
+const today = frappe.datetime.get_today();
+const nextWeek = frappe.datetime.add_days(today, 7);
+const jsDate = frappe.datetime.str_to_obj(frm.doc.posting_date);
+```
+
+## Formatting
+
+```javascript
+const total = format_currency(frm.doc.grand_total, frm.doc.currency);
+```
+
+## Rules
+
+- Normalize input before calculations.
+- Use Frappe date helpers instead of hand-building strings.
+- Use formatters only for display, not business logic.

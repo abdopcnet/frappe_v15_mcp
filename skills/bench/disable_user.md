@@ -1,12 +1,9 @@
-# disable-user
+# Disable User
 
-Disable a user account.
+Use this when a user account must be blocked immediately.
+
+## Example
 
 ```bash
-bench --site <site> disable-user <email>
+bench --site site.local set-value User user@example.com enabled 0
 ```
-
-## Notes
-
-- Confirm account before disabling
-- Use for temporary access suspension

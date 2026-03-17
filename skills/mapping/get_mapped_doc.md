@@ -1,13 +1,24 @@
 # get_mapped_doc
 
-Create a document from another (e.g. Sales Order → Sales Invoice).
+Map one source document into another target document.
+
+## Basic mapping
 
 ```python
 from frappe.model.mapper import get_mapped_doc
-doc = get_mapped_doc("Sales Order", source_name, {
-    "Sales Order": {"doctype": "Sales Invoice", "validation": {"docstatus": ["=", 1]}},
-    "Sales Order Item": {"doctype": "Sales Invoice Item"}
-})
+
+doc = get_mapped_doc(
+    "Sales Order",
+    source_name,
+    {
+        "Sales Order": {"doctype": "Sales Invoice", "validation": {"docstatus": ["=", 1]}},
+        "Sales Order Item": {"doctype": "Sales Invoice Item"},
+    },
+)
 ```
 
-Use `field_map` and `field_no_map` when needed. Validate permissions.
+## Rules
+
+- Validate source docstatus and business state before mapping.
+- Use `field_map` or `field_no_map` when defaults are not enough.
+- Keep mapping logic close to the target creation flow.

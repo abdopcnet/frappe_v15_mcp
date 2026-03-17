@@ -1,11 +1,22 @@
 # Stock Ledger
 
-Use one stock ledger query to review quantity movement for an item.
+Use this when the task is about inventory movement history or stock valuation traces.
+
+## Read stock ledger entries
 
 ```python
-sle = frappe.get_all("Stock Ledger Entry", filters={"item_code": item_code}, fields=["posting_date", "actual_qty"])
+entries = frappe.get_all(
+    "Stock Ledger Entry",
+    filters={
+        "item_code": item_code,
+        "warehouse": warehouse,
+    },
+    fields=["posting_date", "actual_qty", "qty_after_transaction", "valuation_rate"],
+    order_by="posting_date desc, posting_time desc",
+)
 ```
 
-- Include warehouse filters when needed
-- Check posting date ordering
-- Use for stock reconciliation checks
+## Pick the right file
+
+- Use this file for stock movement queries.
+- Use `gl_entry.md` for accounting postings.

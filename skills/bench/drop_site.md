@@ -1,10 +1,13 @@
-# drop_site
+# Drop Site
 
-Drop a site.
+Use this when deleting a site permanently.
+
+## Example
 
 ```bash
-bench drop-site SITENAME
-bench drop-site SITENAME --force --no-backup
+bench drop-site site.local --force
 ```
 
-Backup first. Use --force only when required.
+## Note
+
+Destructive. Verify backups first.

@@ -1,13 +1,19 @@
 # log_error
 
-Log backend exceptions with `frappe.log_error`.
+Use `frappe.log_error()` for backend exceptions that need a searchable Error Log entry.
+
+## Minimal pattern
 
 ```python
-frappe.log_error(f"[[filename.py]] method_name")
+try:
+    run_sync()
+except Exception:
+    frappe.log_error(title="task_sync failed", message=frappe.get_traceback())
+    raise
 ```
 
-## Notes
+## Rules
 
-- Include filename and method name
-- Keep message short and searchable
-- Do not log secrets
+- Use a short searchable title.
+- Log tracebacks or compact context, not secrets.
+- Re-raise when the caller must still fail.

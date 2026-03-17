@@ -1,12 +1,11 @@
-# describe-database-table
+# Describe Database Table
 
-Describe table structure for a DocType.
+Use this when checking columns or indexes on a physical table.
+
+## Example
 
 ```bash
-bench --site <site> describe-database-table --doctype "Sales Invoice"
+bench --site site.local mariadb
+DESCRIBE `tabSales Invoice`;
+SHOW INDEX FROM `tabSales Invoice`;
 ```
-
-## Notes
-
-- Use before schema changes
-- Verify field-to-column mapping

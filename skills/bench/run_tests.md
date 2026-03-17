@@ -1,11 +1,15 @@
-# run_tests
+# Run Tests
 
-Run site tests.
+Use this when running app or site tests from bench.
+
+## App tests
 
 ```bash
-bench --site SITENAME run-tests --app APP_NAME
-bench --site SITENAME run-tests --doctype "DocType"
-bench --site SITENAME run-tests --module "app.module.tests.test_file"
+bench --site site.local run-tests --app my_app
 ```
 
-Use a test site. Keep fixtures/migrations current.
+## Specific doctype tests
+
+```bash
+bench --site site.local run-tests --doctype "Sales Order"
+```

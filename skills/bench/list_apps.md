@@ -1,8 +1,9 @@
-# list_apps
+# List Apps
 
-List installed apps.
+Use this when checking what is installed on a site.
+
+## Example
 
 ```bash
-bench --site SITENAME list-apps
-bench --site SITENAME list-apps --format json
+bench --site site.local list-apps
 ```

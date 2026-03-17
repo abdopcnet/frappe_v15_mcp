@@ -1,12 +1,9 @@
-# mariadb
+# MariaDB Console
 
-Open MariaDB console for a site.
+Use this when the site runs on MariaDB and you need a raw SQL shell.
+
+## Example
 
 ```bash
-bench --site <site> mariadb
+bench --site site.local mariadb
 ```
-
-## Notes
-
-- Use on MariaDB-backed sites
-- Prefer read queries first in production

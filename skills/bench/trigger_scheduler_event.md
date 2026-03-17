@@ -1,11 +1,13 @@
-# trigger_scheduler_event
+# Trigger Scheduler Event
 
-Run scheduler events manually.
+Use this when you need to test a scheduler job path manually.
+
+## Example
 
 ```bash
-bench --site SITENAME trigger-scheduler-event all
-bench --site SITENAME trigger-scheduler-event hourly
-bench --site SITENAME trigger-scheduler-event daily
+bench --site site.local execute frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_job --kwargs '{"job_type": "all"}'
 ```
 
-Use for validation/debug. Events: hourly, daily, weekly, monthly, cron.
+## Note
+
+For general scheduler health, start with `bench doctor`.

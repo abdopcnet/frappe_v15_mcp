@@ -1,12 +1,9 @@
-# install-app
+# Install App
 
-Install an app on a specific site.
+Use this when an app already exists in `apps/` and must be installed on a site.
+
+## Example
 
 ```bash
-bench --site <site> install-app <app_name>
+bench --site site.local install-app my_app
 ```
-
-## Notes
-
-- Run migrations after install
-- Confirm app dependencies before install

@@ -1,10 +1,13 @@
-# uninstall_app
+# Uninstall App
 
-Uninstall app from site.
+Use this when removing an app from a site cleanly.
+
+## Example
 
 ```bash
-bench --site SITENAME uninstall-app APP_NAME
-bench --site SITENAME uninstall-app APP_NAME --dry-run --yes
+bench --site site.local uninstall-app my_app
 ```
 
-Backup before uninstall. Use --dry-run first.
+## Note
+
+Prefer this over manual `installed_apps` edits.

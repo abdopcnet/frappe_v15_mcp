@@ -1,12 +1,9 @@
-# set-last-active-for-user
+# Set Last Active For User
 
-Set last active timestamp for a user.
+Use this when simulating user activity timestamps or repairing stale metadata.
+
+## Example
 
 ```bash
-bench --site <site> set-last-active-for-user --user <username>
+bench --site site.local set-value User user@example.com last_active 2026-03-17
 ```
-
-## Notes
-
-- Use only for maintenance tasks
-- Verify target username before running

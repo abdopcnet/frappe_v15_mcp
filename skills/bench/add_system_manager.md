@@ -1,12 +1,16 @@
-# add-system-manager
+# Add System Manager
 
-Create a System Manager user.
+Use this when an existing user needs the `System Manager` role.
+
+## Example
 
 ```bash
-bench --site <site> add-system-manager <email> --first-name <name>
+bench --site site.local console
+user = frappe.get_doc("User", "admin@example.com")
+user.add_roles("System Manager")
+frappe.db.commit()
 ```
 
-## Notes
+## Note
 
-- Use a valid email address
-- Verify user permissions after creation
+Use bench console when no direct CLI subcommand exists for the exact role change.

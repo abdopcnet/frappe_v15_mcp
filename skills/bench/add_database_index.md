@@ -1,12 +1,14 @@
-# add-database-index
+# Add Database Index
 
-Add an index to a DocType table column.
+Use this when you need a targeted SQL index during troubleshooting or a migration.
+
+## Example
 
 ```bash
-bench --site <site> add-database-index --doctype <doctype> --column <fieldname>
+bench --site site.local mariadb
+ALTER TABLE `tabSales Invoice` ADD INDEX idx_customer_posting_date (customer, posting_date);
 ```
 
-## Notes
+## Note
 
-- Use exact database column names
-- Check query performance before and after
+Prefer adding permanent indexes through a patch, not manual production edits only.

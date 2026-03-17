@@ -1,10 +1,9 @@
-# trim_tables
+# Trim Tables
 
-Remove orphaned columns not in DocType/Custom Field definitions.
+Use this when cleaning specific heavy tables rather than the whole database.
+
+## Example
 
 ```bash
-bench --site SITENAME trim-tables --dry-run
-bench --site SITENAME trim-tables --no-backup
+bench --site site.local trim-tables --tables "tabError Log,tabVersion"
 ```
-
-Use --no-backup for execution. Run dry-run first.

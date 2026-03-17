@@ -1,12 +1,17 @@
-# remove-from-installed-apps
+# Remove From Installed Apps
 
-Remove app entry from installed apps list without uninstalling data.
+Use this when bench metadata must be corrected before or after uninstall troubleshooting.
+
+## Example
 
 ```bash
-bench --site <site> remove-from-installed-apps <app_name>
+bench --site site.local console
+apps = frappe.get_installed_apps()
+apps.remove("my_app")
+frappe.db.set_single_value("Installed Applications", "installed_apps", "\n".join(apps))
+frappe.db.commit()
 ```
 
-## Notes
+## Note
 
-- This does not remove app tables/data
-- Use only when you understand dependency impact
+Prefer `uninstall-app` when possible. Manual removal is a repair path.

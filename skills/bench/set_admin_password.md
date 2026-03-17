@@ -1,12 +1,9 @@
-# set-admin-password
+# Set Admin Password
 
-Set password for Administrator account.
+Use this when resetting the Administrator password.
+
+## Example
 
 ```bash
-bench --site <site> set-admin-password
+bench --site site.local set-admin-password new-secret
 ```
-
-## Notes
-
-- Command prompts for new password
-- Rotate credentials securely

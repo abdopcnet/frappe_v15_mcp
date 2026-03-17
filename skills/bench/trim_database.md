@@ -1,18 +1,13 @@
-# trim-database
+# Trim Database
 
-Remove orphaned tables for deleted DocTypes.
+Use this when old operational rows must be archived or deleted to reduce database size.
 
-```bash
-bench --site <site> trim-database
-```
-
-## Option
+## Example
 
 ```bash
-bench --site <site> trim-database --dry-run
+bench --site site.local trim-database
 ```
 
-## Notes
+## Note
 
-- Run `--dry-run` first
-- Take backup before destructive cleanup
+Review affected doctypes before using aggressive cleanup.

@@ -1,10 +1,13 @@
-# migrate
+# Migrate
 
-Run site migrations.
+Use this after schema changes, patches, fixtures, or app updates.
+
+## Example
 
 ```bash
-bench --site SITENAME migrate
-bench --site SITENAME migrate --skip-failing
+bench --site site.local migrate
 ```
 
-Run after code/schema changes. Backup production first.
+## Note
+
+This applies patches, syncs schema, and runs migration hooks.

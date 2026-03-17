@@ -1,12 +1,9 @@
-# set-password
+# Set Password
 
-Set password for a user.
+Use this when resetting a normal user's password.
+
+## Example
 
 ```bash
-bench --site <site> set-password <username>
+bench --site site.local set-password user@example.com new-secret
 ```
-
-## Notes
-
-- Command prompts for password input
-- Use strong passwords

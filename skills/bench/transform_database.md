@@ -1,12 +1,13 @@
-# transform-database
+# Transform Database
 
-Run database transformation operations.
+Use this when the task is a schema or data transformation executed through a patch or migration script.
+
+## Preferred path
 
 ```bash
-bench --site <site> transform-database --type archive
+bench --site site.local migrate
 ```
 
-## Notes
+## Note
 
-- Take backup before transform operations
-- Review output before repeating on production
+Do not treat raw database transformation as an ad-hoc bench habit. Put repeatable changes in patches.

@@ -1,12 +1,9 @@
-# use
+# Use Site
 
-Set the default site for bench.
+Use this when switching default site context in the current bench.
+
+## Example
 
 ```bash
-bench use <site>
+bench use site.local
 ```
-
-## Notes
-
-- Updates `sites/currentsite.txt`
-- Confirm target site before running

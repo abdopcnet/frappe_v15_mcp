@@ -1,12 +1,9 @@
-# export-csv
+# Export CSV
 
-Export DocType data to CSV.
+Use this when you need DocType data in CSV form.
+
+## Example
 
 ```bash
-bench --site <site> export-csv <doctype>
+bench --site site.local export-csv /tmp/customer.csv --doctype Customer
 ```
-
-## Notes
-
-- Match DocType name exactly
-- Use a test site before production operations

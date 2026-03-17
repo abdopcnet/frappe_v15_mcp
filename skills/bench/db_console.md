@@ -1,12 +1,15 @@
-# db-console
+# DB Console
 
-Open database console for the site's configured backend.
+Use this when you need an interactive SQL shell for the site database.
+
+## MariaDB example
 
 ```bash
-bench --site <site> db-console
+bench --site site.local mariadb
 ```
 
-## Notes
+## PostgreSQL example
 
-- Prefer read queries first in production
-- Keep direct SQL changes minimal and auditable
+```bash
+bench --site site.local postgres
+```

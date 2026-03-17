@@ -1,12 +1,13 @@
-# add-to-hosts
+# Add To Hosts
 
-Add site host entry to local hosts file.
+Use this when a local development site needs hostname mapping.
+
+## Example
 
 ```bash
-bench --site <site> add-to-hosts
+echo "127.0.0.1 site.local" | sudo tee -a /etc/hosts
 ```
 
-## Notes
+## Note
 
-- May require sudo permissions
-- Verify hosts entry after execution
+This is an OS step, not a Frappe database action.

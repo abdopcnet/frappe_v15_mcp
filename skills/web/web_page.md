@@ -1,10 +1,23 @@
-# web_page
+# Web Page
 
-Public page: `get_context(context)` and Jinja template.
+Use this when the route is backed by a Python context builder.
+
+## Build page context
 
 ```python
+import frappe
+
 def get_context(context):
-    context.title = "Products"
-    context.items = frappe.get_all("Item", filters={"disabled": 0}, fields=["name", "item_name"])
+    context.no_cache = 1
+    context.orders = frappe.get_all(
+        "Sales Order",
+        filters={"customer": frappe.session.user},
+        fields=["name", "transaction_date", "grand_total"],
+        order_by="transaction_date desc",
+    )
 ```
-Template: extend `templates/web.html`, use `{{ title }}`, `{% for item in items %}`. Keep context small; sanitize output.
+
+## Pick the right file
+
+- Use this file for route-specific Python context.
+- Use `web_template.md` for reusable website building blocks.

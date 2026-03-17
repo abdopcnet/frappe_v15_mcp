@@ -1,12 +1,13 @@
-# ready-for-migration
+# Ready For Migration
 
-Check if site is ready for migration.
+Use this as a pre-migration checklist, not as a single bench command.
 
-```bash
-bench --site <site> ready-for-migration
+## Checklist
+
+```text
+1. Take a backup.
+2. Commit app changes.
+3. Verify patches.txt order.
+4. Freeze writes if production.
+5. Run bench --site site.local migrate.
 ```
-
-## Notes
-
-- Run before upgrade windows
-- Resolve all reported blockers first

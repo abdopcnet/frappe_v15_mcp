@@ -1,15 +1,33 @@
 # scheduler_events
 
-Define scheduled tasks in `hooks.py`.
+Register recurring jobs in `hooks.py` using Frappe scheduler buckets or cron.
+
+## Standard buckets
 
 ```python
 scheduler_events = {
-	"daily": ["my_app.tasks.daily_cleanup"]
+    "hourly": ["my_app.tasks.sync_hourly"],
+    "daily": ["my_app.tasks.daily_cleanup"],
 }
 ```
 
-## Notes
+## Cron entry
 
-- Keep jobs idempotent and retry-safe
-- Prefer small focused task methods
-- Use cron entries only when needed
+```python
+scheduler_events = {
+    "cron": {
+        "0 6 * * *": ["my_app.tasks.run_morning_jobs"],
+    }
+}
+```
+
+## Rules
+
+- Jobs must be idempotent and retry-safe.
+- Keep scheduled functions small and move heavy work into `frappe.enqueue()` if needed.
+- Use cron only when built-in buckets are not enough.
+
+## Do not use for
+
+- Request-triggered background work; use `enqueue.md`
+- Job design guidance; use `background_jobs.md`

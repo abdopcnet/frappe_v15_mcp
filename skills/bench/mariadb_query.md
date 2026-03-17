@@ -1,13 +1,14 @@
-# mariadb-query
+# MariaDB Query
 
-Run a SQL query through bench using MariaDB.
+Use this when you need to run a one-off SQL statement against a MariaDB-backed site.
+
+## Example
 
 ```bash
-bench --site <site> mariadb -e 'SELECT name, dt, enabled FROM `tabClient Script` WHERE dt IN ("Stock Entry", "Stock Entry Detail") ORDER BY enabled DESC, name;'
+bench --site site.local mariadb
+SELECT name, customer FROM `tabSales Invoice` ORDER BY modified DESC LIMIT 10;
 ```
 
-## Notes
+## Note
 
-- Use backticks for table names that contain spaces (e.g. `` `tabClient Script` ``).
-- Use single quotes around the `-e` argument when the query contains double-quoted strings (e.g. `"Stock Entry"`).
-- Prefer read-only queries; use backups before destructive SQL.
+Prefer read queries first. Use transactions carefully for writes.

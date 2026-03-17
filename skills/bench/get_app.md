@@ -1,10 +1,15 @@
-# get_app
+# Get App
 
-Fetch app into bench.
+Use this when pulling a new app repository into the bench.
+
+## Example
 
 ```bash
-bench get-app https://github.com/org/app
-bench get-app https://github.com/org/app --branch develop
+bench get-app https://github.com/example/my_app.git
 ```
 
-Use trusted source. Specify branch when needed.
+## Branch variant
+
+```bash
+bench get-app --branch version-15 https://github.com/example/my_app.git
+```

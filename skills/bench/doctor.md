@@ -1,12 +1,13 @@
-# doctor
+# Doctor
 
-Run site health checks.
+Use this when checking scheduler and worker health.
+
+## Example
 
 ```bash
-bench --site <site> doctor
+bench doctor
 ```
 
-## Notes
+## Note
 
-- Use to diagnose scheduler and worker issues
-- Review output before taking action
+Good first step for queue, worker, and scheduler issues.

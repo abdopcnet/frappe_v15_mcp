@@ -1,12 +1,9 @@
-# postgres
+# Postgres Console
 
-Open PostgreSQL console for a site.
+Use this when the site runs on PostgreSQL and you need raw SQL access.
+
+## Example
 
 ```bash
-bench --site <site> postgres
+bench --site site.local postgres
 ```
-
-## Notes
-
-- Use on PostgreSQL-backed sites
-- Prefer read queries first in production

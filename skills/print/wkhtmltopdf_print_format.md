@@ -1,30 +1,38 @@
-# wkhtmltopdf_print_format
+# Wkhtmltopdf Print Format
 
-Set PDF margins via `.print-format`; engine overrides `@page`.
-Use simple CSS (tables). Avoid flex/grid/position fixed.
+Use this when a print format works in browser preview but breaks in PDF output.
+
+## Page sizing CSS
 
 ```html
 <style>
-    @page { size: A4 portrait; margin: 0mm; }
-    .print-format {
-        margin-top: 2mm;
-        margin-bottom: 2mm;
-        margin-left: 2mm;
-        margin-right: 2mm;
-        page-size: A4;
-        orientation: Portrait;
-        header-spacing: 5mm;
-    }
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  .print-format {
+    font-size: 11px;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
 </style>
-
-<div class="print-format">
-    <!-- Template content: tables preferred -->
-</div>
 ```
 
-Only direct `.print-format` properties are read for PDF options.
-After changes: clear cache and hard refresh.
+## Safer layout pattern
 
-```bash
-bench --site yoursite.local clear-cache
+```html
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 70%; vertical-align: top;">Left block</td>
+    <td style="width: 30%; vertical-align: top; text-align: right;">Right block</td>
+  </tr>
+</table>
 ```
+
+## Pick the right file
+
+- Use this file for wkhtmltopdf spacing, page breaks, and layout compatibility.
+- Use `print_format.md` for the actual print template structure.

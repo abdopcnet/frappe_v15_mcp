@@ -1,3 +1,22 @@
-# web_form
+# Web Form
 
-Public form: Web Form doctype with route, doc_type, web_form_fields. Set login_required, allow_edit, allow_multiple, success_message. Add validation on submit; use captcha/throttling if needed.
+Use this when the question is about collecting website input into a DocType through Web Form.
+
+## Create a Web Form record
+
+```python
+if not frappe.db.exists("Web Form", "Support Ticket"):
+    frappe.get_doc({
+        "doctype": "Web Form",
+        "title": "Support Ticket",
+        "route": "support-ticket",
+        "doc_type": "Issue",
+        "login_required": 1,
+        "published": 1,
+    }).insert()
+```
+
+## Pick the right file
+
+- Use this file for Web Form configuration.
+- Use `web_page.md` for custom route logic.

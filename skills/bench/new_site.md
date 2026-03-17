@@ -1,10 +1,15 @@
-# new_site
+# New Site
 
-Create a new site.
+Use this when creating a fresh Frappe site.
+
+## Example
 
 ```bash
-bench new-site SITENAME --admin-password PASSWORD
-bench new-site SITENAME --db-name DBNAME --no-demo-data --admin-password PASSWORD
+bench new-site site.local
 ```
 
-Use strong admin password. Verify site name first.
+## Common variant
+
+```bash
+bench new-site site.local --db-name site_local --admin-password admin
+```

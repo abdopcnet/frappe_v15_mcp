@@ -2,26 +2,20 @@
 
 <p align="center">
     <strong>Frappe v15 MCP</strong><br>
-    <em>AGENTS.md / skills for Frappe v15</em>
+    <em>Comprehensive skills & agents for Frappe Framework development</em>
 </p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+    <img src="https://img.shields.io/badge/skills-128-blue" alt="Skills">
+    <img src="https://img.shields.io/badge/categories-27-purple" alt="Categories">
 </p>
 
 ---
 
-## Install
+## Overview
 
-```bash
-cd frappe-bench/apps
-git clone https://github.com/abdopcnet/frappe_v15_mcp.git
-bench --site your-site install-app frappe_v15_mcp
-```
-
-_(Replace `your-site` with your site name and the repo URL if different.)_
-
----
+This project provides Frappe v15 skills and agents to help with development tasks.
 
 ## Contact
 

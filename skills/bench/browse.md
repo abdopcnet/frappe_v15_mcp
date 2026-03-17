@@ -1,8 +1,13 @@
-# browse
+# Browse
 
-Open site in browser.
+Use this when you want to open a site URL from bench.
+
+## Example
 
 ```bash
-bench --site SITENAME browse
-bench --site SITENAME browse --user Administrator
+bench browse --site site.local
 ```
+
+## Note
+
+Useful in local development only.

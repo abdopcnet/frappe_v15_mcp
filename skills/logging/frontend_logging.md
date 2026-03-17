@@ -1,9 +1,15 @@
 # frontend_logging
 
-Log errors only; keep messages short.
+Use browser logging sparingly and avoid noisy console output in shipped client scripts.
+
+## Error-only pattern
 
 ```javascript
-console.error("[filename.js] short_error_description");
+console.error("[task.js] failed to load task summary");
 ```
 
-Do not use console.log/info/warn/debug. No sensitive data. Remove noisy logs before release.
+## Rules
+
+- Log errors only.
+- Keep messages short and searchable.
+- Never log secrets or sensitive payloads.

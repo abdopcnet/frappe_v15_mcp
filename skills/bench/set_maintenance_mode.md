@@ -1,18 +1,15 @@
-# set-maintenance-mode
+# Set Maintenance Mode
 
-Enable or disable site maintenance mode.
+Use this when temporarily blocking normal access during upgrades or repair.
 
-```bash
-bench --site <site> set-maintenance-mode on
-```
-
-## Option
+## Enable
 
 ```bash
-bench --site <site> set-maintenance-mode off
+bench --site site.local set-maintenance-mode on
 ```
 
-## Notes
+## Disable
 
-- Enable before planned maintenance
-- Disable after validation
+```bash
+bench --site site.local set-maintenance-mode off
+```

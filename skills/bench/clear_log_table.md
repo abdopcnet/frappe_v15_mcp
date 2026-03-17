@@ -1,12 +1,15 @@
-# clear-log-table
+# Clear Log Table
 
-Delete old rows from a log DocType table.
+Use this when log tables have grown too large and you need targeted cleanup.
+
+## Example
 
 ```bash
-bench --site <site> clear-log-table --doctype "Error Log" --days 30
+bench --site site.local console
+frappe.db.delete("Error Log", {"modified": ("<", "2024-01-01")})
+frappe.db.commit()
 ```
 
-## Notes
+## Note
 
-- Start with conservative `--days`
-- Use only for log/maintenance doctypes
+Delete old logs selectively. Avoid wiping useful recent diagnostics.

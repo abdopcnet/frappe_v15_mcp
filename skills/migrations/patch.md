@@ -1,6 +1,8 @@
-# Patch
+# patch
 
-Use one patch function to run controlled schema or data migration logic.
+Write idempotent migration logic inside a patch `execute()` function.
+
+## Basic patch
 
 ```python
 def execute():
@@ -8,6 +10,8 @@ def execute():
         frappe.reload_doc("custom", "doctype", "custom_field")
 ```
 
-- Make patches idempotent
-- Keep patches short and deterministic
-- Add patches to `patches.txt` in order
+## Rules
+
+- Make every patch idempotent.
+- Keep it deterministic and short.
+- Add patches to `patches.txt` in execution order.

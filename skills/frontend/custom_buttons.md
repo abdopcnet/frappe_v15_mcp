@@ -1,32 +1,43 @@
 # custom_buttons
 
-Add or remove custom buttons on the form.
+Add form toolbar actions with `frm.add_custom_button()`.
+
+## Simple button
 
 ```javascript
-frappe.ui.form.on("My DocType", {
+frappe.ui.form.on("Task", {
   refresh(frm) {
-    // Simple button with inline action
-    frm.add_custom_button(__("Do Something"), function () {
-      frappe.call({
-        method: "my_app.my_module.my_method",
-        args: { name: frm.doc.name },
-        freeze: true,
-        freeze_message: __("Processing..."),
-        callback: function (r) {
-          if (r.exc) return;
-          frappe.msgprint(__("Done"));
-        },
-      });
+    frm.add_custom_button(__("Mark Complete"), () => {
+      frm.set_value("status", "Completed");
+      frm.save();
     });
-
-    // Example: primary button
-    frm.add_custom_button(__("Primary Action"), function () {
-      // direct action logic here
-    }).addClass("btn-primary");
   },
 });
-
-// Remove button or set primary action when needed:
-// frm.remove_custom_button(__("Label"));
-// frm.page.set_primary_action(__("Save"), function () { frm.save(); });
 ```
+
+## Grouped button
+
+```javascript
+frm.add_custom_button(__("Payment Entry"), () => create_payment_entry(frm), __("Create"));
+frm.add_custom_button(__("Delivery Note"), () => create_delivery_note(frm), __("Create"));
+frm.page.set_inner_btn_group_as_primary(__("Create"));
+```
+
+## Conditional button
+
+```javascript
+if (frm.doc.docstatus === 1 && frm.perm[0].cancel) {
+  frm.add_custom_button(__("Cancel"), () => frm.cancel()).addClass("btn-danger");
+}
+```
+
+## Rules
+
+- Add buttons from `refresh()` so they reappear correctly.
+- Gate actions by `is_new()`, `docstatus`, and permissions.
+- Use confirmation dialogs for destructive actions.
+
+## Do not use for
+
+- Primary save lifecycle documentation
+- General dialog patterns; use `dialogs.md`

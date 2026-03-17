@@ -1,18 +1,9 @@
-# generate-pot-file
+# Generate POT File
 
-Generate translation POT template files.
+Use this when preparing translation source strings for an app.
 
-```bash
-bench --site <site> generate-pot-file
-```
-
-## Option
+## Example
 
 ```bash
-bench --site <site> generate-pot-file --app <app_name>
+bench generate-pot-file --app my_app
 ```
-
-## Notes
-
-- Run from bench root
-- Commit generated files with translation updates
