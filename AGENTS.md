@@ -3,7 +3,6 @@
 - Investigate before coding and do deep analysis first.
 - Use short English comments above non-obvious code sections.
 - Follow the Frappe framework conventions.
-- Reply to me in should english only.
 - End replies with ✅ when rules are followed.
 
 ## Naming Conventions
