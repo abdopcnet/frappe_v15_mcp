@@ -7,7 +7,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
-    <img src="https://img.shields.io/badge/skills-128-blue" alt="Skills">
+    <img src="https://img.shields.io/badge/skills-130-blue" alt="Skills">
     <img src="https://img.shields.io/badge/categories-27-purple" alt="Categories">
 </p>
 
