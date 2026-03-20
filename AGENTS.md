@@ -13,48 +13,36 @@
 - DocType: Title Case with spaces.
 - Files: snake_case.py, snake_case.js.
 
-
 ## Logging
 
-- Frontend: `skills/logging/frontend_logging.md`
-- Backend: `skills/logging/log_error.md`
+# Example: log errors only in the frontend (no console.log/info/warn/debug).
 
----
+```javascript
+console.error("[filename.js] short_error_description");
+```
 
-# Frontend (JavaScript)
+# Example: log backend exceptions with frappe.log_error.
 
-- `skills/frontend/field_properties.md` - Hide, enable, require, options
-- `skills/frontend/dialogs.md` - msgprint, show_alert, confirm; HTML in message use frappe.utils.escape_html
-
----
-
-# Database
-
-- `skills/database/analyze_tables_and_processlist.md` - Analyze tables/columns and processlist; find what blocks migrate, KILL blocker, re-run migrate
-
----
-
-# System
-
-- `skills/system/system_console.md` - System Console (safe_exec) vs bench execute
-- `skills/system/websocket_pwa_fix.md` - WebSocket/PWA/realtime fix: apps.txt order, gunicorn restart, nginx keepalive/ws headers, redis_socketio, Cloudflare
-
----
-
-# Print & Reports
-
-- `skills/print/print_format.md` - Jinja print formats
-- `skills/print/wkhtmltopdf_print_format.md` - wkhtmltopdf print formats
-
----
-
-# GitHub
-
-- `skills/github/bug_report_github_issue_template.md` - ERPNext bug report template for GitHub issues
-
----
+```python
+frappe.log_error(f"[[filename.py]] method_name")
+```
 
 # Bench
 
-- `skills/bench/describe_database_table.md` - `bench describe-database-table`
-- `skills/bench/mariadb_query.md` - `bench mariadb -e`
+# Example: inspect table/column mapping for a DocType.
+
+```bash
+bench --site <site> describe-database-table --doctype "Sales Invoice"
+```
+
+# Example: run a read-only SQL query through MariaDB.
+
+```bash
+bench --site <site> mariadb -e 'SELECT name, dt, enabled FROM `tabClient Script` WHERE dt IN ("Stock Entry", "Stock Entry Detail") ORDER BY enabled DESC, name;'
+```
+
+# Example: aggregate results (read-only).
+
+```bash
+bench --site <site> mariadb -e 'SELECT dt, COUNT(*) as total FROM `tabDocField` GROUP BY dt ORDER BY total DESC LIMIT 10;'
+```
